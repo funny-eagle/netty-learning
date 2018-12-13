@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.nocoder</groupId>
-    <artifactId>netty-demo-01</artifactId>
+    <artifactId>echo-server</artifactId>
     <version>1.0</version>
     <dependencies>
             <dependency>

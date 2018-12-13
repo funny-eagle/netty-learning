@@ -18,10 +18,7 @@ public class EchoServer {
     }
 
     public static void main(String[] args) throws Exception {
-        // 设置端口
-        int port = 8000;
-        // 调用服务器的start()方法
-        new EchoServer(port).start();
+        new EchoServer(8000).start();
     }
 
     public void start() throws Exception {

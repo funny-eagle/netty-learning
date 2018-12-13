@@ -35,15 +35,15 @@ public class EchoServer {
                     .channel(NioServerSocketChannel.class)
                     // 设置 socket 地址使用所选的端口
                     .localAddress(new InetSocketAddress(port))
-                    // 添加 EchoServerHandler 到Chanel 的ChannelPipline
-                    .childHandler(new ChannelInitializer<SocketChannel>() {
-                        @Override
-                        public void initChannel(SocketChannel ch)
-                                throws Exception {
-                            ch.pipeline().addLast(
-                                    new EchoServerHandler());
-                        }
-                    });
+                    // 添加 EchoServerHandler 到Chanel 的ChannelPipeline
+                    .childHandler(
+                            new ChannelInitializer<SocketChannel>() {
+                                @Override
+                                public void initChannel(SocketChannel ch) throws Exception {
+                                    ch.pipeline().addLast(new EchoServerHandler());
+                                }
+                            }
+                    );
 
             // 等待服务器关闭
             ChannelFuture f = b.bind().sync();
